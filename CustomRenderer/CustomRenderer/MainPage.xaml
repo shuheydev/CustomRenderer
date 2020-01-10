@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CustomRenderer.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CustomRenderer.Controlls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <controls:GradientStackLayout
+        Padding="20"
+        EndColor="White"
+        StartColor="Blue">
+
+        <!--<controls:GradientButton
+            BackgroundColor="Red"
+            CornerRadius="30"
+            EndColor="#731282"
+            StartColor="#0517a1"
+            Text="Button"
+            TextColor="White" />-->
+        <Button
+            Padding="0"
+            CornerRadius="50"
+            HorizontalOptions="Center"
+            Text="Normal Button"
+            VerticalOptions="Center"
+            WidthRequest="200" />
+
+    </controls:GradientStackLayout>
+
+
+</ContentPage>
