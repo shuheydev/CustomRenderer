@@ -10,7 +10,11 @@
 
     <controls:GradientStackLayout
         Padding="20"
-        EndColor="White"
+        EndColor="Red"
+        GradientHorizontalDirection="RightToLeft"
+        GradientRatio="1.0"
+        GradientVerticalDirection="TopToBottom"
+        Spacing="20"
         StartColor="Blue">
 
         <!--<controls:GradientButton
@@ -27,7 +31,13 @@
             Text="Normal Button"
             VerticalOptions="Center"
             WidthRequest="200" />
-
+        <Button
+            Padding="0"
+            CornerRadius="50"
+            HorizontalOptions="Center"
+            Text="Normal Button"
+            VerticalOptions="Center"
+            WidthRequest="200" />
     </controls:GradientStackLayout>
 
 

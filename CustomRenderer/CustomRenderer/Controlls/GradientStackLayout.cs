@@ -60,5 +60,56 @@ namespace CustomRenderer.Controlls
         private static void GradientRatioPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
         }
+
+
+        public GradientHorizontalDirection GradientHorizontalDirection
+        {
+            get { return (GradientHorizontalDirection)GetValue(GradientHorizontalDirectionProperty); }
+            set { SetValue(GradientHorizontalDirectionProperty, value); }
+        }
+        public static readonly BindableProperty GradientHorizontalDirectionProperty = BindableProperty.Create(
+               propertyName: nameof(GradientHorizontalDirection),
+               returnType: typeof(GradientHorizontalDirection),
+               declaringType: typeof(GradientStackLayout),
+               defaultValue: GradientHorizontalDirection.Nothing,
+               defaultBindingMode: BindingMode.OneWay,
+               propertyChanged: GradientHorizontalDirectionPropertyChanged
+            );
+        private static void GradientHorizontalDirectionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+
+        }
+
+        public GradientVerticalDirection GradientVerticalDirection
+        {
+            get { return (GradientVerticalDirection)GetValue(GradientVerticalDirectionProperty); }
+            set { SetValue(GradientVerticalDirectionProperty, value); }
+        }
+        public static readonly BindableProperty GradientVerticalDirectionProperty = BindableProperty.Create(
+               propertyName: nameof(GradientVerticalDirection),
+               returnType: typeof(GradientVerticalDirection),
+               declaringType: typeof(GradientStackLayout),
+               defaultValue: GradientVerticalDirection.Nothing,
+               defaultBindingMode: BindingMode.OneWay,
+               propertyChanged: GradientVerticalDirectionPropertyChanged
+            );
+        private static void GradientVerticalDirectionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+
+        }
+    }
+
+    public enum GradientHorizontalDirection
+    {   
+        LeftToRight,
+        RightToLeft,
+        Nothing,
+    }
+
+    public enum GradientVerticalDirection
+    {
+        TopToBottom,
+        BottomToTop,
+        Nothing,
     }
 }
