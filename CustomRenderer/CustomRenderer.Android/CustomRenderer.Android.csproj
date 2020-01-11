@@ -61,6 +61,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Renderers\GradientButtonRenderer.cs" />
     <Compile Include="Renderers\GradientStackLayoutRenderer.cs" />
+    <Compile Include="Renderers\ShadowFrameRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

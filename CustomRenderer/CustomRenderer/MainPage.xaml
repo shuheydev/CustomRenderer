@@ -3,6 +3,7 @@
     x:Class="CustomRenderer.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
     xmlns:controls="clr-namespace:CustomRenderer.Controlls"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10,34 +11,74 @@
 
     <controls:GradientStackLayout
         Padding="20"
-        EndColor="Red"
-        GradientHorizontalDirection="Nothing"
+        EndColor="White"
+        GradientHorizontalDirection="LeftToRight"
         GradientRatio="1.0"
         GradientVerticalDirection="BottomToTop"
         Spacing="20"
-        StartColor="Blue">
+        StartColor="White">
 
-        <!--<controls:GradientButton
+        <Button
+            Padding="0"
+            CornerRadius="50"
+            HorizontalOptions="Center"
+            Text="Normal Button"
+            VerticalOptions="Center"
+            WidthRequest="200" />
+        <Button
+            Padding="0"
+            CornerRadius="50"
+            HorizontalOptions="Center"
+            Text="Normal Button"
+            VerticalOptions="Center"
+            WidthRequest="200" />
+
+        <Button
+            android:Button.UseDefaultShadow="True"
             BackgroundColor="Red"
-            CornerRadius="30"
-            EndColor="#731282"
-            StartColor="#0517a1"
-            Text="Button"
-            TextColor="White" />-->
-        <Button
-            Padding="0"
-            CornerRadius="50"
             HorizontalOptions="Center"
-            Text="Normal Button"
-            VerticalOptions="Center"
-            WidthRequest="200" />
-        <Button
-            Padding="0"
-            CornerRadius="50"
-            HorizontalOptions="Center"
-            Text="Normal Button"
-            VerticalOptions="Center"
-            WidthRequest="200" />
+            Text="This is with Shadow"
+            TextColor="White" />
+
+        <controls:ShadowFrame Elevation="50" />
+
+        <StackLayout Orientation="Horizontal" Spacing="30">
+            <controls:ShadowFrame
+                Padding="0"
+                CornerRadius="40"
+                Elevation="50"
+                HorizontalOptions="Center"
+                IsClippedToBounds="True"
+                VerticalOptions="Center">
+                <Button
+                    BackgroundColor="#FF0E90E1"
+                    CornerRadius="40"
+                    HeightRequest="70"
+                    HorizontalOptions="Center"
+                    Text="A"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    WidthRequest="70" />
+            </controls:ShadowFrame>
+            <controls:ShadowFrame
+                Padding="0"
+                CornerRadius="40"
+                Elevation="50"
+                HorizontalOptions="Center"
+                IsClippedToBounds="True"
+                VerticalOptions="Center">
+                <Button
+                    BackgroundColor="White"
+                    CornerRadius="40"
+                    HeightRequest="70"
+                    HorizontalOptions="Center"
+                    Text="A"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    WidthRequest="70" />
+            </controls:ShadowFrame>
+        </StackLayout>
+
     </controls:GradientStackLayout>
 
 
