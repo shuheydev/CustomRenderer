@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace CustomRenderer.Controlls
 {
@@ -22,7 +19,6 @@ namespace CustomRenderer.Controlls
             );
         private static void StartColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            //Do something if you need.
         }
 
         public Color EndColor
@@ -40,7 +36,6 @@ namespace CustomRenderer.Controlls
             );
         private static void EndColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            //Do something if you need.
         }
 
         public float GradientRatio
@@ -77,7 +72,6 @@ namespace CustomRenderer.Controlls
             );
         private static void GradientHorizontalDirectionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-
         }
 
         public GradientVerticalDirection GradientVerticalDirection
@@ -95,7 +89,6 @@ namespace CustomRenderer.Controlls
             );
         private static void GradientVerticalDirectionPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-
         }
     }
 
