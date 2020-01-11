@@ -11,9 +11,9 @@
     <controls:GradientStackLayout
         Padding="20"
         EndColor="Red"
-        GradientHorizontalDirection="RightToLeft"
+        GradientHorizontalDirection="Nothing"
         GradientRatio="1.0"
-        GradientVerticalDirection="TopToBottom"
+        GradientVerticalDirection="BottomToTop"
         Spacing="20"
         StartColor="Blue">
 
