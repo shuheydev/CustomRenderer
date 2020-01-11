@@ -4,7 +4,6 @@ using CustomRenderer.Controlls;
 using CustomRenderer.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using Xamarin.Forms.Platform.Android.FastRenderers;
 
 [assembly: ExportRenderer(typeof(GradientStackLayout), typeof(GradientStackLayoutRenderer))]
 namespace CustomRenderer.Droid.Renderers
@@ -17,11 +16,19 @@ namespace CustomRenderer.Droid.Renderers
 
         protected override void DispatchDraw(Canvas canvas)
         {
-
             var hd = Element.GradientHorizontalDirection;
             var vd = Element.GradientVerticalDirection;
+            float width = Width * Element.GradientRatio;
+            float height = Height * Element.GradientRatio;
+            var color0 = Element.StartColor.ToAndroid();
+            var color1 = Element.EndColor.ToAndroid();
 
-            LinearGradient gradient = ComposeGradient(hd, vd);
+            LinearGradient gradient = ComposeGradient(hd,
+                                                      vd,
+                                                      width,
+                                                      height,
+                                                      color0,
+                                                      color1);
 
             Paint paint = new Paint
             {
@@ -33,11 +40,14 @@ namespace CustomRenderer.Droid.Renderers
             base.DispatchDraw(canvas);
         }
 
-        private LinearGradient ComposeGradient(GradientHorizontalDirection hd, GradientVerticalDirection vd)
+        private LinearGradient ComposeGradient(GradientHorizontalDirection hd,
+                                               GradientVerticalDirection vd,
+                                               float width,
+                                               float height,
+                                               Android.Graphics.Color color0,
+                                               Android.Graphics.Color color1)
         {
             #region グラデーションの方向
-            float width = Width * Element.GradientRatio;
-            float height = Height * Element.GradientRatio;
 
             //Switch式便利!
             (float x0, float x1) = hd switch
@@ -54,9 +64,6 @@ namespace CustomRenderer.Droid.Renderers
             };
             #endregion
 
-
-            var color0 = Element.StartColor.ToAndroid();
-            var color1 = Element.EndColor.ToAndroid();
             //縦横双方がNothingだった場合は,StartColor一色で塗りつぶすようにする
             if (hd == GradientHorizontalDirection.Nothing && vd == GradientVerticalDirection.Nothing)
             {
