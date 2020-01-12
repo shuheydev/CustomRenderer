@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace CustomRenderer.Controlls
 {
-    public class ShadowFrame:Frame
+    public class ShadowFrame : Frame
     {
-
         public float Elevation
         {
             get { return (float)GetValue(ElevationProperty); }
